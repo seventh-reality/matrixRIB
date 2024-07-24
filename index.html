@@ -1,36 +1,38 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>matrixRIB</title>
+    <title>matrixRIB/title>
     <meta charset="utf-8">
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
-    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+     <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
   </head>
   <body>
     <div id="card">
     <!-- <model-viewer> HTML element -->
-    <model-viewer src="matrixRIB.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity=".5" exposure="1.59" environment-image="aircraft_workshop_01_1k.hdr">
+    <model-viewer src="matrixRIB.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="loading.gif"  shadow-intensity="0.88" shadow-softness="1" exposure="1">
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
-     <div id="button" style = "display:flex; justify-content: space-between;">
-          <img src="4.png"  align="center" style="width:100px;  padding-left: 0px;padding-top: 0px;"/>
-	  <img src="iitname.png"  style="width:100px; height:60px;  padding-right: 8px;padding-top: 22px;"/>  
-        </div>  
       <button slot="ar-button" id="ar-button">
         View in 4D
     </button>
+       <div id="button" style = "display:flex; justify-content: space-between;">
+          <img src="4.png"  align="center" style="width:100px;  padding-left: 5px;padding-top: 0px;"/>
+	  <img src="iitname.png"  style="width:100px;  padding-right: 0px;padding-top: 0px;"/>    
+      </div>
+     
       <div id="ar-prompt">
           <img src="ar_hand_prompt.png">
       </div>
-    </model-viewer>
-    <section class="attributiontwo">
+    </model-viewer> 
+     <section class="attributiontwo">
+       <p style="background-image: url('black.png')" style="width:60px;height:60px; padding-left: 0px;padding-top: 10px;">
       
-      <p style="background-image: url('black.png')" style="width:60px;height:80px; padding-left: 0px;padding-top: 10px;">
-       <span>
+      <span>
         
         <a href="https://drive.google.com/file/d/1kpr9csFU_trpcXrLeKH5CQIM5k02qxK6/view?usp=sharing"><img src="Broucher_1.png" id="youtube-icon" align="center" style="width:30px;height:40px; padding-left: 17px;padding-top: 0px;"></a>
         <a href="https://youtu.be/feR4lDjrLt8"><img src="Video_1.png" id="youtube-icon" align="center" style="width:30px;height:40px; padding-left: 20px;padding-top: 0px; "></a>
@@ -39,17 +41,42 @@
         <a href="https://drive.google.com/file/d/1hFf5OK8XdV_q6UZ7WFcwiR3xrxWkUQ4Z/view?usp=sharing"><img src="analytics_1.png" id="youtube-icon" align="center" style="width:30px;height:40px; padding-left: 20px;padding-top: 0px;"></a>
         <h5>CLICK ON THE ABOVE ICONS FOR MORE FEATURES</h5>
       </span>
+         <style>
+       h5 {
+       text-align: center;
+       margin-top:-5px; 
+       
+       
+       font-size: 9px;
+         }
+          
+   </style>  
    
     </section>
-    </div>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E4DL6Z6FMW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      
+       </div>
+   <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  gtag('config', 'G-E4DL6Z6FMW');
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB9Q0rEJwgpUForSuU-Deub86dEErxr6xw",
+    authDomain: "varian-aarhus-7468b.firebaseapp.com",
+    projectId: "varian-aarhus-7468b",
+    storageBucket: "varian-aarhus-7468b.appspot.com",
+    messagingSenderId: "1062779231273",
+    appId: "1:1062779231273:web:d5cdc6e2eb57d740dd1038",
+    measurementId: "G-X2PCG842TC"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
     <script src="script.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
